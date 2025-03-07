@@ -30,3 +30,7 @@ To expand on this, I will also explore the following secondary questions:
 - Which features are the most crucial in determining higher happiness rankings?
 
 To address these questions, I will apply **statistical analysis** and **machine learning models**, such as **K-Nearest Neighbors (KNN) Regression**, to derive insights and make predictions. Our goal is to identify the most influential factors that drive happiness and use our findings to build predictive models for happiness rankings.
+
+## References
+#### [1] World Happiness Report (no date) www.kaggle.com. Available at: https://www.kaggle.com/datasets/unsdsn/world-happiness.
+#### [2] Inc, G. (2014) How Does the Gallup World Poll Work?, Gallup.com. Available at: https://www.gallup.com/178667/gallup-world-poll-work.aspx.
