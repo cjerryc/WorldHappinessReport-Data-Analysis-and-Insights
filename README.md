@@ -145,7 +145,7 @@ This suggests interconnected influence between societal structures and perceived
 🔴 Freedom increase leads to slight decrease
 
 > _Add image here:_  
-> `![Predictor Impact](https://raw.githubusercontent.com/cjerryc/WorldHappinessReport-Data-Analysis-and-Insights/main/Predictor Impacts.png)`
+> `![Predictor Impact]([https://raw.githubusercontent.com/cjerryc/WorldHappinessReport-Data-Analysis-and-Insights/main/Predictor Impacts.png](https://github.com/cjerryc/WorldHappinessReport-Data-Analysis-and-Insights/blob/main/Predictor%20Impacts.png?raw=true))`
 
 ---
 
@@ -155,7 +155,7 @@ This suggests interconnected influence between societal structures and perceived
 🟡 Moderate relationship between Social Support and both Economy & Health
 
 > _Add image here:_  
-> `![Predictor Correlation](Predictor Correlations.png)`
+> `![Predictor Correlation]([Predictor Correlations.png](https://github.com/cjerryc/WorldHappinessReport-Data-Analysis-and-Insights/blob/main/Predictor%20Correlations.png?raw=true))`
 
 ---
 
