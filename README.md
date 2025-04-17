@@ -145,7 +145,7 @@ This suggests interconnected influence between societal structures and perceived
 🔴 Freedom increase leads to slight decrease
 
 > _Add image here:_  
-> `![Predictor Impact](images/figure1.png)`
+> `![Predictor Impact](Predictor Impacts.png)`
 
 ---
 
@@ -155,7 +155,7 @@ This suggests interconnected influence between societal structures and perceived
 🟡 Moderate relationship between Social Support and both Economy & Health
 
 > _Add image here:_  
-> `![Predictor Correlation](images/figure2.png)`
+> `![Predictor Correlation](Predictor Correlations.png)`
 
 ---
 
