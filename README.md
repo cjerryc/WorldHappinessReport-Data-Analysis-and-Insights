@@ -144,7 +144,7 @@ This suggests interconnected influence between societal structures and perceived
 🟢 Economy has strongest positive impact  
 🔴 Freedom increase leads to slight decrease
 
-![Predictor Impact]([https://raw.githubusercontent.com/cjerryc/WorldHappinessReport-Data-Analysis-and-Insights/main/Predictor Impacts.png](https://github.com/cjerryc/WorldHappinessReport-Data-Analysis-and-Insights/blob/main/Predictor%20Impacts.png?raw=true))`
+![Predictor Impact]([https://raw.githubusercontent.com/cjerryc/WorldHappinessReport-Data-Analysis-and-Insights/main/Predictor Impacts.png](https://github.com/cjerryc/WorldHappinessReport-Data-Analysis-and-Insights/blob/main/Predictor%20Impacts.png?raw=true))
 
 ---
 
@@ -153,7 +153,7 @@ This suggests interconnected influence between societal structures and perceived
 🟢 Strong relationship between Health & Economy  
 🟡 Moderate relationship between Social Support and both Economy & Health
 
-![Predictor Correlation]([Predictor Correlations.png](https://github.com/cjerryc/WorldHappinessReport-Data-Analysis-and-Insights/blob/main/Predictor%20Correlations.png?raw=true))`
+![Predictor Correlation]([Predictor Correlations.png](https://github.com/cjerryc/WorldHappinessReport-Data-Analysis-and-Insights/blob/main/Predictor%20Correlations.png?raw=true))
 
 ---
 
