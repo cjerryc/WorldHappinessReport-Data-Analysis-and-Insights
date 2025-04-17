@@ -34,3 +34,139 @@ To address these questions, I will apply **statistical analysis** and **machine 
 ## References
 #### [1] World Happiness Report (no date) www.kaggle.com. Available at: https://www.kaggle.com/datasets/unsdsn/world-happiness.
 #### [2] Inc, G. (2014) How Does the Gallup World Poll Work?, Gallup.com. Available at: https://www.gallup.com/178667/gallup-world-poll-work.aspx.
+
+# 🌍 World Happiness Report Analysis
+
+**Jerry Chang**  
+*Dr. Allison Theobold, Data 301 Winter 2025*  
+California Polytechnic State University, San Luis Obispo
+
+---
+
+## 📌 Introduction / Background / Goals
+
+Happiness and contentment are essential for health—individually and collectively. However, perceptions of happiness vary greatly across cultures. This dataset enables us to analyze predictors of happiness using responses from over 150 countries via the Gallup World Poll.
+
+We aim to answer two main questions:
+- **Primary**: Do certain features contribute more greatly to higher happiness scores or rankings?
+- **Secondary**: Does the surveyed rating of a predictor affect other predictors?
+
+With this, we explore how predictor interactions can be used to derive happiness scores for hypothetical countries.
+
+---
+
+## 📊 Dataset
+
+**Source**: [World Happiness Report – Kaggle](https://www.kaggle.com/datasets/unsdsn/world-happiness)
+
+- Covers 5 years (2015–2019)
+- 1,000 respondents per country, per year
+- Collected via face-to-face or telephone interviews depending on infrastructure
+
+---
+
+## 🧹 Data Cleaning & Processing
+
+- Renamed inconsistent column names
+- Removed unnecessary columns
+- Added a `Year` column
+- Merged all five datasets using an outer join
+- Filled missing values with `0`
+
+### 📈 Features
+
+- **Response Variables**:  
+  - `Happiness Score` (continuous happiness index)  
+  - `Happiness Rank` (relative position)
+
+- **Predictors**:  
+  - Country  
+  - Economy (GDP per Capita)  
+  - Social Support  
+  - Health (Life Expectancy)  
+  - Freedom  
+  - Trust (Government Corruption)  
+  - Generosity  
+  - Year
+
+---
+
+## 🤖 Model
+
+We trained a **K-Nearest Neighbors (KNN) Regression** model using:
+
+- Euclidean Distance
+- Distance weighting
+- K = 9 (optimal value via GridSearchCV)
+- RMSE: **0.524**
+
+The model allows us to predict Happiness Scores based on hypothetical changes in predictor weightings.
+
+### 🔍 Example Insight
+
+> Decreasing Generosity and increasing Social Support (keeping other variables stable) → **Predicted Happiness increased**
+
+---
+
+## 📌 Results & Implications
+
+- **Most influential predictor**: Economy  
+- Other key factors: Generosity, Social Support  
+- Economy, Generosity, and Social Support had a **negative relationship** with Happiness Score — possibly reflecting societal dissatisfaction with these areas
+
+#### Correlation Analysis
+
+- Strong positive relationship between **Health** and **Economy**
+- Moderate positive relationships between **Social Support**, **Economy**, and **Health**
+
+This suggests interconnected influence between societal structures and perceived well-being.
+
+> 🔍 **Policy implication**: Models like this may inform prioritization of social programs or legislative action to increase national morale.
+
+---
+
+## 🧠 Ethics & Limitations
+
+- Cultural and temporal variance in how people perceive happiness
+- Surveys are subjective and based on self-reporting
+- Limited to respondents with technological access
+- Historical and institutional factors skew responses and perceived happiness
+
+📌 **Takeaway**: Results should be interpreted as **supplemental insights**, not definitive guides.
+
+---
+
+## 📷 Figures
+
+### 📉 Figure 1: Predictor Impact on Happiness Score
+
+*(Adjusting predictors by +0.1 and observing change in predicted happiness)*  
+🟢 Economy has strongest positive impact  
+🔴 Freedom increase leads to slight decrease
+
+> _Add image here:_  
+> `![Predictor Impact](images/figure1.png)`
+
+---
+
+### 🔄 Figure 2: Correlation Between Predictors
+
+🟢 Strong relationship between Health & Economy  
+🟡 Moderate relationship between Social Support and both Economy & Health
+
+> _Add image here:_  
+> `![Predictor Correlation](images/figure2.png)`
+
+---
+
+## 🙏 Acknowledgements
+
+Special thanks to **Dr. Allison Theobold** for her guidance, and to **Cal Poly SLO** for providing the resources and support for this project.
+
+---
+
+## 📚 References
+
+1. [World Happiness Report – Kaggle](https://www.kaggle.com/datasets/unsdsn/world-happiness)  
+2. [How the Gallup World Poll Works](https://www.gallup.com/178667/gallup-world-poll-work.aspx)
+
