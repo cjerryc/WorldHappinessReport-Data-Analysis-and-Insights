@@ -133,11 +133,14 @@ This suggests interconnected influence between societal structures and perceived
 
 From our KNN regression model with K = 9, Euclidean Distance, and Distance weighting, we have found that emphasis on the Economy is the most influential predictor on a country’s overall happiness.
 - Other influential predictors: Generosity, Social Support. 
-- Economy, Generosity, and Social Support have a negative relationship with Happiness Score, which may potentially be explained by negative sentiment that results in higher weightings for those features and poor effects on a people’s Happiness. 
+- Economy, Generosity, and Social Support have a negative relationship with Happiness Score, which may potentially be explained by negative sentiment that results in higher weightings for those features and poor effects on a people’s Happiness.
+
 From calculating correlations between Predictors, we find some strong correlations
 - A strong, positive relationship between the importance of Health and the Economy when deciding on Happiness in a country. 
 - This reflects an underlying effect predictors have on each other in rating Happiness.
+
 This model could potentially be used to identify social programs or legislation that governmental bodies could prioritize to lift morale and address the grievances of their constituents, or to place a country amongst rankings on happiness.
+
 A limitation is that the change in what citizens of a country hold to be important could shift dramatically between years, at a rate faster than what annually collected data reflects and much faster than the action of legislation.
 
 ---
