@@ -145,7 +145,7 @@ This suggests interconnected influence between societal structures and perceived
 🔴 Freedom increase leads to slight decrease
 
 > _Add image here:_  
-> `![Predictor Impact]([Predictor Impacts.png](https://github.com/cjerryc/WorldHappinessReport-Data-Analysis-and-Insights/blob/b6296eb8800afeea4600d50d96330ba7655c0d7e/Predictor%20Impacts.png))`
+> `![Predictor Impact](Predictor Impacts.png)`
 
 ---
 
