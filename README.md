@@ -31,6 +31,7 @@ To expand on this, I will also explore the following secondary questions:
 
 To address these questions, I will apply **statistical analysis** and **machine learning models**, such as **K-Nearest Neighbors (KNN) Regression**, to derive insights and make predictions. Our goal is to identify the most influential factors that drive happiness and use our findings to build predictive models for happiness rankings.
 
+## Final Insights and Data Analysis on the World Happiness Report
 ![Final Poster Insights](https://github.com/cjerryc/WorldHappinessReport-Data-Analysis-and-Insights/blob/main/Data301_FinalPoster.pptx.png?raw=true)
 
 
