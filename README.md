@@ -49,9 +49,11 @@ Happiness and contentment are essential for health—individually and collective
 
 We aim to answer two main questions:
 - **Primary**: Do certain features contribute more greatly to higher happiness scores or rankings?
-- **Secondary**: Does the surveyed rating of a predictor affect other predictors?
+- **Secondary**: Does the surveyed rating of a predictor affect other predictors? Within this data, we could also derive predicted happiness scores of hypothetical countries, depending on a collection of features.
 
 With this, we explore how predictor interactions can be used to derive happiness scores for hypothetical countries.
+
+This data [1] was collected by the Gallup World Poll from over 150 countries, using representative surveys of about 1,000 respondents per country. Surveys are done via face-to-face interviews or telephone calls, depending on the country's infrastructure [2]
 
 ---
 
@@ -59,25 +61,28 @@ With this, we explore how predictor interactions can be used to derive happiness
 
 **Source**: [World Happiness Report – Kaggle](https://www.kaggle.com/datasets/unsdsn/world-happiness)
 
-- Covers 5 years (2015–2019)
-- 1,000 respondents per country, per year
-- Collected via face-to-face or telephone interviews depending on infrastructure
+- Covers 5 years (2015–2019).
+- 1,000 respondents per country, per year.
+- Collected via face-to-face or telephone interviews depending on infrastructure.
+- A mix of numerical values and categorical values.
 
 ---
 
 ## 🧹 Data Cleaning & Processing
 
-- Renamed inconsistent column names
-- Removed unnecessary columns
-- Added a `Year` column
-- Merged all five datasets using an outer join
-- Filled missing values with `0`
+- Renamed inconsistent column names.
+- Removed unnecessary columns.
+- Added a `Year` column.
+- Merged all five datasets using an outer join.
+- Filled missing values with `0`.
+- Model Tuning: Scale with Mean and without Standard Deviation, use Euclidean Distance, use K= 9 Neighbors in KNN, and weight by Distance.
+
 
 ### 📈 Features
 
 - **Response Variables**:  
-  - `Happiness Score` (continuous happiness index)  
-  - `Happiness Rank` (relative position)
+  - `Happiness Score` (continuous happiness index) describes the calculated happiness index for that country in that year.
+  - `Happiness Rank` (relative position) describes the ranking of Happiness of a country that year.
 
 - **Predictors**:  
   - Country  
@@ -99,8 +104,11 @@ We trained a **K-Nearest Neighbors (KNN) Regression** model using:
 - Distance weighting
 - K = 9 (optimal value via GridSearchCV)
 - RMSE: **0.524**
+  
+We have chosen to train a KNN-Regression model for this data. Based on the combination of features, we predict a numerical score on a continuous scale. Using GridSearchCV, we were able to tune hyperparameters to find an ideal KNN model for the dataset for an RMSE of 0.524. 
 
-The model allows us to predict Happiness Scores based on hypothetical changes in predictor weightings.
+Using the tuned model, we may predict happiness for hypothetical weightings and regions to better understand how increasing the focus on a feature would perform for overall happiness. For example, when decreasing the weighting for Generosity and shifting that sum to increase the weighting for Social Support, we found that predicted Happiness increased for the hypothetical case, keeping all other predictors stable.
+
 
 ### 🔍 Example Insight
 
@@ -123,6 +131,15 @@ This suggests interconnected influence between societal structures and perceived
 
 > 🔍 **Policy implication**: Models like this may inform prioritization of social programs or legislative action to increase national morale.
 
+From our KNN regression model with K = 9, Euclidean Distance, and Distance weighting, we have found that emphasis on the Economy is the most influential predictor on a country’s overall happiness.
+- Other influential predictors: Generosity, Social Support. 
+- Economy, Generosity, and Social Support have a negative relationship with Happiness Score, which may potentially be explained by negative sentiment that results in higher weightings for those features and poor effects on a people’s Happiness. 
+From calculating correlations between Predictors, we find some strong correlations
+- A strong, positive relationship between the importance of Health and the Economy when deciding on Happiness in a country. 
+- This reflects an underlying effect predictors have on each other in rating Happiness.
+This model could potentially be used to identify social programs or legislation that governmental bodies could prioritize to lift morale and address the grievances of their constituents, or to place a country amongst rankings on happiness.
+A limitation is that the change in what citizens of a country hold to be important could shift dramatically between years, at a rate faster than what annually collected data reflects and much faster than the action of legislation.
+
 ---
 
 ## 🧠 Ethics & Limitations
@@ -131,6 +148,15 @@ This suggests interconnected influence between societal structures and perceived
 - Surveys are subjective and based on self-reporting
 - Limited to respondents with technological access
 - Historical and institutional factors skew responses and perceived happiness
+
+Happiness and contentment are essential for our health as individuals and as a collective. Without happiness of some level, our health would suffer and would reflect in our communities. That being said, different cultures perceive happiness differently between self and society, community, or even within. This dataset does not capture the fine grained reasons for happiness in different countries, and thus we may only interpret happiness in terms of the available predictors. 
+
+Historical events greatly affect the societal stratification of a people, the wealth amongst the people, and perception on a global scale. When we view predictors such as GDP and Government Corruption, we must understand that people make do within their setting to find their happiness. 
+
+Institutions in a country affect the educational, racial, political, monetary, etc. opportunities respondents have, and in turn, would affect goals necessary for happiness. This skews the data on an individual level and if the respondents are not varied, this would be reflected for the perceived happiness of the overall country and in the weighting in an observation.
+
+Furthermore, these ratings are done based on feeling rather than hard, repeatable measurements and are thus subject to human bias. The types of respondents are those technologically reachable, and this could skew the scores and importance since it is a voluntary survey. With all these factors in mind, our findings should be taken as reference or supplemental information, rather than an absolute guide for interested parties.
+
 
 📌 **Takeaway**: Results should be interpreted as **supplemental insights**, not definitive guides.
 
@@ -146,6 +172,8 @@ This suggests interconnected influence between societal structures and perceived
 
 ![Predictor Impact](https://github.com/cjerryc/WorldHappinessReport-Data-Analysis-and-Insights/blob/main/Predictor%20Impacts.png?raw=true)
 
+Looking at the changes in Happiness Scores after adjusting each predictor by a 0.1 increase, we may see that people's perception of the Economy is the most influential predictor for Happiness Scores of a country. For a 0.1 increase in weighting for Freedom, there is an associated 0.0339 decrease in Happiness Score, while holding all other variables 
+
 ---
 
 ### 🔄 Figure 2: Correlation Between Predictors
@@ -155,11 +183,14 @@ This suggests interconnected influence between societal structures and perceived
 
 ![Predictor Correlation](https://github.com/cjerryc/WorldHappinessReport-Data-Analysis-and-Insights/blob/main/Predictor%20Correlations.png?raw=true)
 
+To answer our secondary question, we calculate the correlation between all the different predictors across the years. There is a strong, positive relationship between the importance of Health and the Economy when rating Happiness in a country. There is a moderately strong, positive relationship between the importance of Social Support and both Economy and Health.
+
 ---
 
 ## 🙏 Acknowledgements
 
-Special thanks to **Dr. Allison Theobold** for her guidance, and to **Cal Poly SLO** for providing the resources and support for this project.
+Special thanks to **Dr. Allison Theobold** for her guidance, and to **Cal Poly SLO** for the resources provided for learning in DATA 301.
+
 
 ---
 
