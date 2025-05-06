@@ -35,7 +35,7 @@ To address these questions, I will apply **statistical analysis** and **machine 
 ![Final Poster Insights](https://github.com/cjerryc/WorldHappinessReport-Data-Analysis-and-Insights/blob/main/Data301_FinalPoster.pptx.png?raw=true)
 
 
-# 🌍 World Happiness Report Analysis (Quickview)
+# World Happiness Report Analysis (Quickview)
 
 **Jerry Chang**  
 *Dr. Allison Theobold, Data 301 Winter 2025*  
@@ -43,7 +43,7 @@ California Polytechnic State University, San Luis Obispo
 
 ---
 
-## 📌 Introduction / Background / Goals
+## Introduction / Background / Goals
 
 Happiness and contentment are essential for health—individually and collectively. However, perceptions of happiness vary greatly across cultures. This dataset enables us to analyze predictors of happiness using responses from over 150 countries via the Gallup World Poll.
 
@@ -57,7 +57,7 @@ This data [1] was collected by the Gallup World Poll from over 150 countries, us
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 **Source**: [World Happiness Report – Kaggle](https://www.kaggle.com/datasets/unsdsn/world-happiness)
 
@@ -68,7 +68,7 @@ This data [1] was collected by the Gallup World Poll from over 150 countries, us
 
 ---
 
-## 🧹 Data Cleaning & Processing
+## Data Cleaning & Processing
 
 - Renamed inconsistent column names.
 - Removed unnecessary columns.
@@ -78,7 +78,7 @@ This data [1] was collected by the Gallup World Poll from over 150 countries, us
 - Model Tuning: Scale with Mean and without Standard Deviation, use Euclidean Distance, use K= 9 Neighbors in KNN, and weight by Distance.
 
 
-### 📈 Features
+### Features
 
 - **Response Variables**:  
   - `Happiness Score` (continuous happiness index) describes the calculated happiness index for that country in that year.
@@ -96,7 +96,7 @@ This data [1] was collected by the Gallup World Poll from over 150 countries, us
 
 ---
 
-## 🤖 Model
+## Model
 
 We trained a **K-Nearest Neighbors (KNN) Regression** model using:
 
@@ -110,13 +110,13 @@ We have chosen to train a KNN-Regression model for this data. Based on the combi
 Using the tuned model, we may predict happiness for hypothetical weightings and regions to better understand how increasing the focus on a feature would perform for overall happiness. For example, when decreasing the weighting for Generosity and shifting that sum to increase the weighting for Social Support, we found that predicted Happiness increased for the hypothetical case, keeping all other predictors stable.
 
 
-### 🔍 Example Insight
+### Example Insight
 
 > Decreasing Generosity and increasing Social Support (keeping other variables stable) → **Predicted Happiness increased**
 
 ---
 
-## 📌 Results & Implications
+## Results & Implications
 
 - **Most influential predictor**: Economy  
 - Other key factors: Generosity, Social Support  
@@ -129,7 +129,7 @@ Using the tuned model, we may predict happiness for hypothetical weightings and 
 
 This suggests interconnected influence between societal structures and perceived well-being.
 
-> 🔍 **Policy implication**: Models like this may inform prioritization of social programs or legislative action to increase national morale.
+> **Policy implication**: Models like this may inform prioritization of social programs or legislative action to increase national morale.
 
 From our KNN regression model with K = 9, Euclidean Distance, and Distance weighting, we have found that emphasis on the Economy is the most influential predictor on a country’s overall happiness.
 - Other influential predictors: Generosity, Social Support. 
@@ -145,7 +145,7 @@ A limitation is that the change in what citizens of a country hold to be importa
 
 ---
 
-## 🧠 Ethics & Limitations
+## Ethics & Limitations
 
 - Cultural and temporal variance in how people perceive happiness
 - Surveys are subjective and based on self-reporting
@@ -161,13 +161,13 @@ Institutions in a country affect the educational, racial, political, monetary, e
 Furthermore, these ratings are done based on feeling rather than hard, repeatable measurements and are thus subject to human bias. The types of respondents are those technologically reachable, and this could skew the scores and importance since it is a voluntary survey. With all these factors in mind, our findings should be taken as reference or supplemental information, rather than an absolute guide for interested parties.
 
 
-📌 **Takeaway**: Results should be interpreted as **supplemental insights**, not definitive guides.
+**Takeaway**: Results should be interpreted as **supplemental insights**, not definitive guides.
 
 ---
 
-## 📷 Figures
+## Figures
 
-### 📉 Figure 1: Predictor Impact on Happiness Score
+### Figure 1: Predictor Impact on Happiness Score
 
 *(Adjusting predictors by +0.1 and observing change in predicted happiness)*  
 🟢 Economy has strongest positive impact  
@@ -179,7 +179,7 @@ Looking at the changes in Happiness Scores after adjusting each predictor by a 0
 
 ---
 
-### 🔄 Figure 2: Correlation Between Predictors
+### Figure 2: Correlation Between Predictors
 
 🟢 Strong relationship between Health & Economy  
 🟡 Moderate relationship between Social Support and both Economy & Health
@@ -190,7 +190,7 @@ To answer our secondary question, we calculate the correlation between all the d
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 Special thanks to **Dr. Allison Theobold** for her guidance, and to **Cal Poly SLO** for the resources provided for learning in DATA 301.
 
