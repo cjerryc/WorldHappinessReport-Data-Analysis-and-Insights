@@ -197,7 +197,7 @@ Special thanks to **Dr. Allison Theobold** for her guidance, and to **Cal Poly S
 
 ---
 
-## 📚 References
+## References
 
 1. [World Happiness Report – Kaggle](https://www.kaggle.com/datasets/unsdsn/world-happiness)  
 2. [How the Gallup World Poll Works](https://www.gallup.com/178667/gallup-world-poll-work.aspx)
